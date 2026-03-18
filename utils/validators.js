@@ -1,7 +1,6 @@
 const validator = require('validator')
 
 exports.validEmail = (email) => {
-    // if email empty or invalid format = error
     if(!email || !validator.isEmail(email)) {
         throw new Error('Invalid email');
     }

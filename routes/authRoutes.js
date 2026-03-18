@@ -18,6 +18,6 @@ router.delete('/me', protect, authController.deleteUser)
 
 router.patch('/change-password', protect, authLimiter, authController.changePassword)
 
-router.patch('/setting', protect, authController.updateSetting)
+router.patch('/setting', protect, authLimiter, authController.updateSetting)
 
 module.exports = router;
