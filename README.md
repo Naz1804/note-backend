@@ -23,8 +23,6 @@ Built with PostgreSQL for robust data management.
 - Google OAuth integration
 - Full CRUD operations for notes
 - Search and filter functionality
-- Rate limiting
-- Input sanitization
 
 ## Tech Stack
 - Node.js
