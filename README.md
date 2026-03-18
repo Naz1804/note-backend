@@ -60,14 +60,42 @@ FRONTEND=
 ```
 
 ## Database Setup
+### 1. Create a Neon PostgreSQL Database
+
+1. Go to [Neon](https://neon.tech) and create a free account
+2. Create a new project
+3. Copy your connection string (it should look like: `postgresql://user:password@ep-xxx.neon.tech/dbname`)
+4. Add the connection string to your `.env` file:
+```
+   DATABASE_URL=your_connection_string_here
+```
+
+### 2. Initialize Database Tables
+
+Run the setup script to create all necessary tables:
+```bash
+node scripts/setupDatabase.js
+```
+
+This will create the following tables:
+- `users` - User accounts with authentication data
+- `notes` - User notes with tags and archive functionality
+
+### 3. Verify Setup
+
+Check your Neon dashboard to confirm the tables were created successfully. You should see:
+- ✅ `users` table
+- ✅ `notes` table
+
+Your database is now ready to use!
 
 ## Running the Application
 ```bash
 npm start
 ```
 
-## API Endpoints
 
+## API Endpoints
 ### Authentication
 - POST `/api/auth/register` - Create account
 - POST `/api/auth/login` - Login
